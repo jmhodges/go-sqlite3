@@ -5,7 +5,10 @@ go:
   - 1.7
 
 install:
-  - echo "skipping install stuff"
+  - curl -L -O https://github.com/bazelbuild/bazel/releases/download/0.3.1/bazel_0.3.1-linux-x86_64.deb
+  - sha256sum -c scripts/bazel_0.3.1-linux-x86_64.deb.sha256
+  - sudo dpkg -i bazel_0.3.1-linux-x86_64.deb
+
 
 script:
   - bazel test //:go_default_test
