@@ -3,9 +3,9 @@ sudo: required
 dist: trusty
 go:
   - 1.7
-before_install:
-  - go get github.com/mattn/goveralls
-  - go get golang.org/x/tools/cmd/cover
+
+install:
+  - echo "skipping install stuff"
+
 script:
-  - $HOME/gopath/bin/goveralls -repotoken 3qJVUE0iQwqnCbmNcDsjYu1nh4J4KIFXx
   - bazel test //:go_default_test
